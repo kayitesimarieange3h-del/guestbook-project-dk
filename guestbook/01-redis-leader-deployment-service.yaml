@@ -43,6 +43,6 @@ spec:
   - port: 6379
     targetPort: 6379
   selector:
-    app: redis
+    app: nginx
     role: leader
     tier: backend
