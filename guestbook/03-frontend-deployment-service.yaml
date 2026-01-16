@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: frontend
 spec:
-  replicas: 3
+  replicas: 10
   selector:
     matchLabels:
         app: guestbook
@@ -26,7 +26,7 @@ spec:
             cpu: 100m
             memory: 100Mi
         ports:
-        - containerPort: 80
+        - containerPort: 801
 ---
 # SOURCE: https://cloud.google.com/kubernetes-engine/docs/tutorials/guestbook
 apiVersion: v1
@@ -45,5 +45,5 @@ spec:
     # the port that this service should serve on
   - port: 80
   selector:
-    app: guestbook
+    name: guestbook
     tier: frontend
